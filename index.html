@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Indian Climate | Class 8</title>
+<title>Indian Climate | Class 8 Geography</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 /* ================= RESET ================= */
@@ -16,8 +16,8 @@
 }
 
 body{
-    background:linear-gradient(120deg,#000428,#004e92);
-    color:white;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
     overflow-x:hidden;
 }
 
@@ -25,62 +25,31 @@ body{
 #loader{
     position:fixed;
     inset:0;
-    background:radial-gradient(circle,#000,#001f3f);
+    background:linear-gradient(135deg,#141e30,#243b55);
     display:flex;
     justify-content:center;
     align-items:center;
     z-index:9999;
-    animation:fade 1s forwards;
-    animation-delay:3s;
+    animation:loaderOut 1s forwards;
+    animation-delay:2.5s;
 }
 
-.loader-ring{
-    width:100px;
-    height:100px;
-    border:10px solid rgba(255,255,255,0.1);
-    border-top:10px solid cyan;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
+.loader-text{
+    font-size:2rem;
+    font-weight:700;
+    background:linear-gradient(90deg,#00f260,#0575e6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:pulse 1.5s infinite;
 }
 
-@keyframes spin{to{transform:rotate(360deg);}}
-@keyframes fade{to{opacity:0;visibility:hidden;}}
-
-/* ================= RAIN ================= */
-.rain{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
+@keyframes pulse{
+    0%,100%{opacity:0.4;}
+    50%{opacity:1;}
 }
 
-.drop{
-    position:absolute;
-    width:2px;
-    height:80px;
-    background:linear-gradient(transparent,cyan);
-    animation:rainFall linear infinite;
-    opacity:0.5;
-}
-
-@keyframes rainFall{
-    to{transform:translateY(120vh);}
-}
-
-/* ================= LIGHTNING ================= */
-.lightning{
-    position:fixed;
-    inset:0;
-    background:white;
-    opacity:0;
-    animation:flash 8s infinite;
-    pointer-events:none;
-}
-
-@keyframes flash{
-    0%,95%,100%{opacity:0;}
-    96%{opacity:0.6;}
-    97%{opacity:0.1;}
-    98%{opacity:0.8;}
+@keyframes loaderOut{
+    to{opacity:0;visibility:hidden;}
 }
 
 /* ================= HEADER ================= */
@@ -91,99 +60,112 @@ header{
     justify-content:center;
     align-items:center;
     text-align:center;
+    background:
+        linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
+        radial-gradient(circle at top,#00c6ff,#0072ff);
 }
 
 header h1{
-    font-size:4.5rem;
+    font-size:4.2rem;
     font-weight:800;
-    background:linear-gradient(45deg,#00f260,#0575e6);
+    background:linear-gradient(45deg,#f7971e,#ffd200);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    animation:glow 3s infinite alternate;
+    animation:titleFloat 4s infinite;
 }
 
-@keyframes glow{
-    from{text-shadow:0 0 10px cyan;}
-    to{text-shadow:0 0 40px blue;}
+@keyframes titleFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
 }
 
 header p{
-    max-width:700px;
-    margin-top:20px;
+    max-width:750px;
     font-size:1.2rem;
+    margin-top:20px;
+    opacity:0.85;
 }
 
 /* ================= BUTTON ================= */
 .btn{
-    margin-top:40px;
+    margin-top:35px;
     padding:15px 45px;
     font-size:1.1rem;
     border:none;
     border-radius:50px;
     cursor:pointer;
-    background:linear-gradient(90deg,#ff0080,#7928ca,#ff0080);
-    background-size:200%;
     color:white;
+    background:linear-gradient(90deg,#ff512f,#f09819,#ff512f);
+    background-size:200%;
     transition:0.5s;
-    box-shadow:0 0 25px rgba(255,0,128,0.7);
+    box-shadow:0 0 25px rgba(255,152,25,0.7);
 }
 
 .btn:hover{
     background-position:right;
-    transform:scale(1.15) rotate(-1deg);
-    box-shadow:0 0 50px rgba(255,0,128,1);
+    transform:scale(1.1);
+    box-shadow:0 0 45px rgba(255,152,25,1);
 }
 
-/* ================= SECTION ================= */
+/* ================= SECTIONS ================= */
 section{
-    padding:80px 10%;
+    padding:90px 10%;
 }
 
-/* ================= GLASS CARDS ================= */
+/* ================= CARDS ================= */
 .card{
-    background:rgba(255,255,255,0.12);
+    background:linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05));
     backdrop-filter:blur(20px);
     border-radius:25px;
-    padding:40px;
-    margin-bottom:40px;
-    box-shadow:0 0 40px rgba(0,0,0,0.6);
+    padding:45px;
+    margin-bottom:45px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.5);
     transition:0.6s;
+    animation:fadeUp 1.2s ease forwards;
 }
 
 .card:hover{
-    transform:translateY(-15px) scale(1.03);
+    transform:translateY(-15px);
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(40px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.card h2{
+    font-size:2.3rem;
+    margin-bottom:15px;
+    background:linear-gradient(45deg,#00f260,#0575e6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.card p, .card li{
+    font-size:1.05rem;
+    line-height:1.8;
+    opacity:0.9;
 }
 
 /* ================= GRID ================= */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
 }
 
-/* ================= QUIZ ================= */
-.quiz button{
+/* ================= LIST ================= */
+ul{
+    margin-left:20px;
     margin-top:10px;
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:30px;
-    background:linear-gradient(45deg,#00c6ff,#0072ff);
-    color:white;
-    cursor:pointer;
-    transition:0.4s;
-}
-
-.quiz button:hover{
-    transform:scale(1.05);
 }
 
 /* ================= FOOTER ================= */
 footer{
     text-align:center;
-    padding:40px;
-    background:linear-gradient(90deg,#000428,#004e92);
-    font-size:0.9rem;
+    padding:45px;
+    background:linear-gradient(90deg,#141e30,#243b55);
+    font-size:0.95rem;
 }
 </style>
 </head>
@@ -192,77 +174,101 @@ footer{
 
 <!-- LOADER -->
 <div id="loader">
-    <div class="loader-ring"></div>
+    <div class="loader-text">Loading Indian Climate...</div>
 </div>
 
-<!-- RAIN -->
-<div class="rain" id="rain"></div>
-<div class="lightning"></div>
-
+<!-- HEADER -->
 <header>
-    <h1>Indian Climate</h1>
-    <p>Class 8 Geography • Monsoons • Seasons • Climate Drama</p>
-    <a href="#content"><button class="btn">Enter the Storm 🌧️</button></a>
+    <h1>Climate of India</h1>
+    <p>
+        Class 8 Geography • NCERT Based Explanation of Indian Climate,
+        Seasons and Monsoon System
+    </p>
+    <a href="#content"><button class="btn">Start Learning 🌍</button></a>
 </header>
 
+<!-- CONTENT -->
 <section id="content">
+
     <div class="card">
-        <h2>Monsoon Climate of India</h2>
+        <h2>What is Climate?</h2>
         <p>
-            India has a monsoon type climate characterized by seasonal reversal of winds and
-            unequal distribution of rainfall.
+            Climate refers to the sum total of weather conditions and variations over a large area
+            for a long period of time. Weather may change within a day, but climate changes over
+            many years.
         </p>
+    </div>
+
+    <div class="card">
+        <h2>Climate of India</h2>
+        <p>
+            India has a <strong>monsoon type of climate</strong>. The monsoon is experienced in the tropical
+            area roughly between 20° N and 20° S. The seasonal reversal in wind direction during a year
+            is the characteristic feature of the monsoon.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Factors Affecting India's Climate</h2>
+        <ul>
+            <li><strong>Latitude:</strong> Tropic of Cancer divides India into tropical and subtropical regions.</li>
+            <li><strong>Altitude:</strong> Mountains like the Himalayas prevent cold winds from Central Asia.</li>
+            <li><strong>Pressure and Wind System:</strong> Seasonal changes affect wind direction.</li>
+            <li><strong>Distance from the Sea:</strong> Coastal areas have moderate climate.</li>
+            <li><strong>Relief Features:</strong> Mountains influence rainfall distribution.</li>
+        </ul>
     </div>
 
     <div class="grid">
         <div class="card">
             <h2>Cold Weather Season</h2>
-            <p>December–February • Low temperatures • Clear skies</p>
+            <p>
+                The cold weather season begins from December to February. The temperature decreases
+                from south to north. Light winter rainfall occurs due to western disturbances.
+            </p>
         </div>
 
         <div class="card">
             <h2>Hot Weather Season</h2>
-            <p>March–May • Heat waves • Rising temperatures</p>
+            <p>
+                From March to May, temperatures rise rapidly. Hot dry winds called <strong>Loo</strong>
+                blow in northern plains. Dust storms are common.
+            </p>
         </div>
 
         <div class="card">
-            <h2>South-West Monsoon</h2>
-            <p>June–September • Heavy rainfall • Agriculture depends on it</p>
+            <h2>Advancing Monsoon</h2>
+            <p>
+                The south-west monsoon arrives in early June. It brings heavy rainfall and is vital
+                for agriculture. India receives about 75% of its rainfall during this season.
+            </p>
         </div>
 
         <div class="card">
             <h2>Retreating Monsoon</h2>
-            <p>October–November • Cyclones on eastern coast</p>
+            <p>
+                From October to November, monsoon winds withdraw. Cyclones may develop over the
+                Bay of Bengal causing heavy rain in coastal areas.
+            </p>
         </div>
     </div>
 
-    <!-- QUIZ -->
-    <div class="card quiz">
-        <h2>Quick Quiz ⚡</h2>
-        <p>Which winds bring rainfall to India?</p>
-        <button onclick="alert('Correct! 🎉')">South-West Monsoon</button>
-        <button onclick="alert('Oops 😅 Try again')">Trade Winds</button>
-        <button onclick="alert('Nope ❌')">Western Disturbances</button>
+    <div class="card">
+        <h2>Importance of Monsoon</h2>
+        <ul>
+            <li>Essential for agriculture</li>
+            <li>Refills rivers and reservoirs</li>
+            <li>Controls vegetation and cropping patterns</li>
+            <li>Affects economy and daily life</li>
+        </ul>
     </div>
+
 </section>
 
 <footer>
-    🌈 Indian Climate Project | Class 8  
-    <br>Built with Extreme CSS Power ⚡
+    © 2025 | Indian Climate Project – Class 8  
+    <br>Designed with Gradients, Animations & NCERT Content 🌈
 </footer>
-
-<script>
-/* RAIN GENERATOR */
-const rain = document.getElementById("rain");
-for(let i=0;i<200;i++){
-    const drop=document.createElement("div");
-    drop.className="drop";
-    drop.style.left=Math.random()*window.innerWidth+"px";
-    drop.style.animationDuration=0.5+Math.random()+"s";
-    drop.style.animationDelay=Math.random()*5+"s";
-    rain.appendChild(drop);
-}
-</script>
 
 </body>
 </html>
