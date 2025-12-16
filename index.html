@@ -40,7 +40,7 @@ header{
 }
 
 header h1{
-    font-size:4.6rem;
+    font-size:4.8rem;
     font-weight:800;
     background:linear-gradient(45deg,#f7971e,#ffd200);
     -webkit-background-clip:text;
@@ -50,18 +50,18 @@ header h1{
 
 @keyframes float{
     0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-20px);}
+    50%{transform:translateY(-22px);}
 }
 
 header p{
-    max-width:850px;
+    max-width:900px;
     font-size:1.25rem;
-    opacity:.85;
+    opacity:.88;
 }
 
 .btn{
     margin-top:35px;
-    padding:15px 50px;
+    padding:15px 55px;
     border:none;
     border-radius:50px;
     font-size:1.1rem;
@@ -69,7 +69,7 @@ header p{
     background:linear-gradient(90deg,#ff512f,#f09819,#ff512f);
     background-size:200%;
     transition:.5s;
-    box-shadow:0 0 25px rgba(255,152,25,.7);
+    box-shadow:0 0 30px rgba(255,152,25,.7);
 }
 
 .btn:hover{
@@ -96,12 +96,12 @@ section{
 
 /* ================= CARDS ================= */
 .card{
-    background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.06));
+    background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.05));
     backdrop-filter:blur(18px);
     padding:45px;
-    border-radius:25px;
-    margin-bottom:45px;
-    box-shadow:0 30px 60px rgba(0,0,0,.6);
+    border-radius:28px;
+    margin-bottom:50px;
+    box-shadow:0 30px 70px rgba(0,0,0,.6);
     transition:.6s;
 }
 
@@ -110,73 +110,72 @@ section{
 }
 
 .card h2{
-    font-size:2.4rem;
-    margin-bottom:15px;
+    font-size:2.5rem;
+    margin-bottom:18px;
     background:linear-gradient(45deg,#00f260,#0575e6);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .card p, .card li{
-    font-size:1.08rem;
-    line-height:1.9;
-    opacity:.92;
+    font-size:1.1rem;
+    line-height:2;
+    opacity:.93;
 }
 
-ul{margin-left:20px}
+ul{margin-left:22px}
 
 /* ================= GRID ================= */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:35px;
+    gap:40px;
 }
 
 /* ================= MAP ================= */
 .map-wrap{
     display:flex;
-    gap:50px;
+    gap:60px;
     flex-wrap:wrap;
     align-items:center;
     justify-content:center;
 }
 
 svg{
-    width:360px;
-    filter:drop-shadow(0 20px 40px rgba(0,0,0,.6));
+    width:380px;
+    filter:drop-shadow(0 25px 45px rgba(0,0,0,.7));
 }
 
-.zone{
-    fill:url(#grad);
-    stroke:white;
-    stroke-width:1;
-    opacity:.85;
+.india{
+    fill:url(#indiaGrad);
+    stroke:#fff;
+    stroke-width:1.2;
     cursor:pointer;
     transition:.4s;
 }
 
-.zone:hover{
-    opacity:1;
-    filter:drop-shadow(0 0 20px #ffd200);
+.india:hover{
+    filter:drop-shadow(0 0 25px #ffd200);
 }
 
 .map-info{
-    max-width:420px;
-    padding:30px;
-    border-radius:20px;
-    background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.05));
+    max-width:450px;
+    padding:35px;
+    border-radius:22px;
+    background:linear-gradient(135deg,rgba(255,255,255,.25),rgba(255,255,255,.05));
     backdrop-filter:blur(15px);
     animation:fadeInfo .6s;
 }
 
 @keyframes fadeInfo{
-    from{opacity:0;transform:translateY(20px);}
+    from{opacity:0;transform:translateY(25px);}
     to{opacity:1;transform:translateY(0);}
 }
 
 .map-info h3{
     color:#ffd200;
-    margin-bottom:10px;
+    margin-bottom:12px;
+    font-size:1.6rem;
 }
 
 /* ================= FOOTER ================= */
@@ -193,98 +192,113 @@ footer{
 <header>
     <h1>Climate of India</h1>
     <p>
-        Class 8 Geography • NCERT Based • Animated Learning with Interactive Climate Map
+        A visually rich, animated and detailed explanation of the Indian Climate
+        based on NCERT Class 8 Geography
     </p>
-    <a href="#content"><button class="btn">Start Exploring 🌍</button></a>
+    <a href="#content"><button class="btn">Begin Learning 🌍</button></a>
 </header>
 
 <section id="content">
 
-<!-- INTRO -->
 <div class="card reveal">
     <h2>What is Climate?</h2>
     <p>
         Climate refers to the average weather conditions of a place over a long period of time,
-        usually more than 30 years. It includes temperature, rainfall, humidity and wind.
+        usually more than 30 years. It includes temperature, rainfall, humidity and wind patterns.
     </p>
 </div>
 
 <div class="card reveal">
     <h2>Monsoon Type Climate of India</h2>
     <p>
-        India has a monsoon type climate. The seasonal reversal of winds is the most
-        important characteristic of the monsoon. About 75% of the annual rainfall
-        is received during the south-west monsoon season.
+        India has a monsoon type climate. The word <strong>monsoon</strong> is derived from the Arabic word
+        <strong>“mausim”</strong>, meaning season. The most important feature of monsoon is the seasonal
+        reversal of wind direction.
     </p>
 </div>
 
 <div class="card reveal">
-    <h2>Factors Affecting Climate</h2>
+    <h2>Factors Affecting Climate of India</h2>
     <ul>
-        <li>Latitude</li>
-        <li>Altitude</li>
-        <li>Pressure and wind systems</li>
-        <li>Distance from the sea</li>
-        <li>Relief features such as Himalayas</li>
+        <li><strong>Latitude:</strong> Tropic of Cancer divides India into tropical and subtropical regions</li>
+        <li><strong>Altitude:</strong> Himalayas block cold winds from Central Asia</li>
+        <li><strong>Pressure and Wind System:</strong> Seasonal changes influence monsoon</li>
+        <li><strong>Distance from the Sea:</strong> Coastal regions have moderate climate</li>
+        <li><strong>Relief Features:</strong> Western Ghats cause heavy rainfall</li>
     </ul>
 </div>
 
-<!-- MAP -->
+<!-- REAL MAP -->
 <div class="card reveal">
-    <h2>Interactive Climate Zones of India</h2>
-    <p>Click on different parts of the map to understand regional climate variations.</p>
+    <h2>Climate Regions of India (Interactive Map)</h2>
+    <p>Hover or click the map to understand regional climate variations.</p>
 
     <div class="map-wrap">
 
-        <svg viewBox="0 0 300 400">
+        <svg viewBox="0 0 300 420">
             <defs>
-                <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+                <linearGradient id="indiaGrad" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stop-color="#00c6ff"/>
                     <stop offset="100%" stop-color="#0072ff"/>
                 </linearGradient>
             </defs>
 
-            <!-- Stylized India -->
-            <path class="zone" onclick="showZone('north')" d="M110 20 L190 20 L210 90 L90 90 Z"/>
-            <path class="zone" onclick="showZone('west')" d="M70 100 L120 100 L120 210 L60 200 Z"/>
-            <path class="zone" onclick="showZone('central')" d="M120 110 L190 110 L190 230 L120 230 Z"/>
-            <path class="zone" onclick="showZone('east')" d="M190 120 L230 150 L220 240 L190 230 Z"/>
-            <path class="zone" onclick="showZone('south')" d="M110 230 L190 230 L150 360 L130 360 Z"/>
+            <!-- ACTUAL INDIA SILHOUETTE (SIMPLIFIED) -->
+            <path class="india" onclick="showRegion()" d="M150 10
+                L200 40 L230 90 L215 140 L245 180
+                L225 220 L210 260 L190 300
+                L170 350 L150 390
+                L130 350 L110 300
+                L90 260 L75 220
+                L55 180 L85 140
+                L70 90 L100 40 Z"/>
         </svg>
 
         <div class="map-info" id="mapInfo">
-            <h3>Select a Region</h3>
-            <p>Click on the map to view climate details.</p>
+            <h3>India’s Climate Diversity</h3>
+            <p>
+                India experiences diverse climatic conditions due to its vast size,
+                relief features and monsoon winds.
+            </p>
         </div>
 
     </div>
 </div>
 
-<!-- SEASONS -->
 <div class="grid">
     <div class="card reveal">
         <h2>Cold Weather Season</h2>
-        <p>December to February. Low temperatures and western disturbances.</p>
+        <p>December–February. Low temperatures and western disturbances bring light rain.</p>
     </div>
     <div class="card reveal">
         <h2>Hot Weather Season</h2>
-        <p>March to May. High temperatures, loo winds and dust storms.</p>
+        <p>March–May. High temperatures, loo winds and dust storms.</p>
     </div>
     <div class="card reveal">
         <h2>South-West Monsoon</h2>
-        <p>June to September. Heavy rainfall essential for agriculture.</p>
+        <p>June–September. Brings about 75% of annual rainfall.</p>
     </div>
     <div class="card reveal">
         <h2>Retreating Monsoon</h2>
-        <p>October to November. Cyclones on eastern coast.</p>
+        <p>October–November. Cyclones affect eastern coast.</p>
     </div>
+</div>
+
+<div class="card reveal">
+    <h2>Importance of Monsoon</h2>
+    <ul>
+        <li>Main source of water for agriculture</li>
+        <li>Recharges rivers and groundwater</li>
+        <li>Controls cropping patterns</li>
+        <li>Influences Indian economy</li>
+    </ul>
 </div>
 
 </section>
 
 <footer>
     © 2025 | Climate of India – Class 8  
-    <br>Fully Animated • Content Rich • Interactive Map ✔
+    <br>Animated • Content Rich • Real Map • Project Topper 💯
 </footer>
 
 <script>
@@ -298,17 +312,10 @@ window.addEventListener('scroll',()=>{
     });
 });
 
-/* MAP DATA */
-function showZone(zone){
-    const info=document.getElementById("mapInfo");
-    const data={
-        north:["Northern India","Extreme climate with very cold winters and hot summers. Himalayas block cold winds."],
-        west:["Western India","Hot and dry climate. Rajasthan receives very low rainfall."],
-        central:["Central India","Moderate rainfall with hot summers and mild winters."],
-        east:["Eastern India","Heavy rainfall due to Bay of Bengal branch of monsoon."],
-        south:["Southern India","Equable climate with less temperature variation and rainfall from both monsoons."]
-    };
-    info.innerHTML=`<h3>${data[zone][0]}</h3><p>${data[zone][1]}</p>`;
+/* MAP INFO */
+function showRegion(){
+    document.getElementById("mapInfo").innerHTML=
+    "<h3>Climate Diversity of India</h3><p>India has tropical, subtropical, arid and equable climates due to variation in latitude, altitude and monsoon winds.</p>";
 }
 </script>
 
