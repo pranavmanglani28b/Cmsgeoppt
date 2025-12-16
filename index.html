@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Indian Climate | Class 8 Geography</title>
+<title>Climate of India | Class 8</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-/* ================= RESET ================= */
 *{
     margin:0;
     padding:0;
@@ -16,43 +15,17 @@
 }
 
 body{
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    color:#fff;
-    overflow-x:hidden;
+    background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#141e30);
+    background-size:400% 400%;
+    animation:bg 18s infinite;
+    color:white;
 }
 
-/* ================= LOADER ================= */
-#loader{
-    position:fixed;
-    inset:0;
-    background:linear-gradient(135deg,#141e30,#243b55);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    animation:loaderOut 1s forwards;
-    animation-delay:2.5s;
+@keyframes bg{
+    50%{background-position:100% 50%;}
 }
 
-.loader-text{
-    font-size:2rem;
-    font-weight:700;
-    background:linear-gradient(90deg,#00f260,#0575e6);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-    0%,100%{opacity:0.4;}
-    50%{opacity:1;}
-}
-
-@keyframes loaderOut{
-    to{opacity:0;visibility:hidden;}
-}
-
-/* ================= HEADER ================= */
+/* HEADER */
 header{
     min-height:100vh;
     display:flex;
@@ -60,215 +33,167 @@ header{
     justify-content:center;
     align-items:center;
     text-align:center;
-    background:
-        linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
-        radial-gradient(circle at top,#00c6ff,#0072ff);
 }
 
 header h1{
-    font-size:4.2rem;
-    font-weight:800;
+    font-size:4.5rem;
     background:linear-gradient(45deg,#f7971e,#ffd200);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    animation:titleFloat 4s infinite;
+    animation:float 4s infinite;
 }
 
-@keyframes titleFloat{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
+@keyframes float{
+    50%{transform:translateY(-20px);}
 }
 
-header p{
-    max-width:750px;
-    font-size:1.2rem;
-    margin-top:20px;
-    opacity:0.85;
-}
-
-/* ================= BUTTON ================= */
 .btn{
-    margin-top:35px;
-    padding:15px 45px;
-    font-size:1.1rem;
+    margin-top:30px;
+    padding:15px 50px;
     border:none;
     border-radius:50px;
+    font-size:1.1rem;
     cursor:pointer;
-    color:white;
     background:linear-gradient(90deg,#ff512f,#f09819,#ff512f);
     background-size:200%;
-    transition:0.5s;
-    box-shadow:0 0 25px rgba(255,152,25,0.7);
+    transition:.5s;
 }
+.btn:hover{background-position:right;transform:scale(1.15);}
 
-.btn:hover{
-    background-position:right;
-    transform:scale(1.1);
-    box-shadow:0 0 45px rgba(255,152,25,1);
-}
-
-/* ================= SECTIONS ================= */
+/* SECTION */
 section{
     padding:90px 10%;
 }
 
-/* ================= CARDS ================= */
 .card{
-    background:linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05));
-    backdrop-filter:blur(20px);
-    border-radius:25px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
     padding:45px;
+    border-radius:25px;
     margin-bottom:45px;
-    box-shadow:0 25px 60px rgba(0,0,0,0.5);
-    transition:0.6s;
-    animation:fadeUp 1.2s ease forwards;
+    box-shadow:0 30px 60px rgba(0,0,0,.6);
 }
 
-.card:hover{
-    transform:translateY(-15px);
+/* MAP */
+.map-container{
+    display:flex;
+    gap:50px;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
 }
 
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(40px);}
-    to{opacity:1;transform:translateY(0);}
+svg{
+    width:320px;
 }
 
-.card h2{
-    font-size:2.3rem;
-    margin-bottom:15px;
-    background:linear-gradient(45deg,#00f260,#0575e6);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.region{
+    fill:#00c6ff;
+    opacity:.75;
+    stroke:white;
+    stroke-width:1;
+    cursor:pointer;
+    transition:.4s;
 }
 
-.card p, .card li{
-    font-size:1.05rem;
-    line-height:1.8;
-    opacity:0.9;
+.region:hover{
+    fill:#ffd200;
+    opacity:1;
+    transform:scale(1.03);
 }
 
-/* ================= GRID ================= */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:35px;
+.info{
+    max-width:400px;
+    min-height:200px;
+    padding:30px;
+    border-radius:20px;
+    background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.05));
+    backdrop-filter:blur(15px);
+    animation:fadeIn .6s;
 }
 
-/* ================= LIST ================= */
-ul{
-    margin-left:20px;
-    margin-top:10px;
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;}
 }
 
-/* ================= FOOTER ================= */
+.info h3{
+    color:#ffd200;
+    margin-bottom:10px;
+}
+
 footer{
     text-align:center;
-    padding:45px;
+    padding:40px;
     background:linear-gradient(90deg,#141e30,#243b55);
-    font-size:0.95rem;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-    <div class="loader-text">Loading Indian Climate...</div>
-</div>
-
-<!-- HEADER -->
 <header>
     <h1>Climate of India</h1>
-    <p>
-        Class 8 Geography • NCERT Based Explanation of Indian Climate,
-        Seasons and Monsoon System
-    </p>
-    <a href="#content"><button class="btn">Start Learning 🌍</button></a>
+    <p>Class 8 Geography • Interactive Climate Map</p>
+    <a href="#map"><button class="btn">Explore Map 🗺️</button></a>
 </header>
 
-<!-- CONTENT -->
-<section id="content">
-
+<section id="map">
     <div class="card">
-        <h2>What is Climate?</h2>
-        <p>
-            Climate refers to the sum total of weather conditions and variations over a large area
-            for a long period of time. Weather may change within a day, but climate changes over
-            many years.
-        </p>
+        <h2>Interactive Climate Map of India</h2>
+        <p>Click on a region to learn about its climate.</p>
+
+        <div class="map-container">
+
+            <!-- SIMPLIFIED INDIA MAP -->
+            <svg viewBox="0 0 200 300">
+                <path class="region" onclick="show('north')" d="M60 10 L140 10 L150 60 L50 60 Z"/>
+                <path class="region" onclick="show('west')" d="M30 70 L90 70 L90 160 L30 150 Z"/>
+                <path class="region" onclick="show('central')" d="M90 80 L150 80 L150 170 L90 170 Z"/>
+                <path class="region" onclick="show('east')" d="M150 90 L190 110 L180 190 L150 170 Z"/>
+                <path class="region" onclick="show('south')" d="M70 170 L140 170 L110 280 L90 280 Z"/>
+            </svg>
+
+            <!-- INFO BOX -->
+            <div class="info" id="info">
+                <h3>Click a Region</h3>
+                <p>Select a part of India to view its climate characteristics.</p>
+            </div>
+
+        </div>
     </div>
+</section>
 
+<section>
     <div class="card">
-        <h2>Climate of India</h2>
-        <p>
-            India has a <strong>monsoon type of climate</strong>. The monsoon is experienced in the tropical
-            area roughly between 20° N and 20° S. The seasonal reversal in wind direction during a year
-            is the characteristic feature of the monsoon.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>Factors Affecting India's Climate</h2>
+        <h2>Why Climate Varies in India</h2>
         <ul>
-            <li><strong>Latitude:</strong> Tropic of Cancer divides India into tropical and subtropical regions.</li>
-            <li><strong>Altitude:</strong> Mountains like the Himalayas prevent cold winds from Central Asia.</li>
-            <li><strong>Pressure and Wind System:</strong> Seasonal changes affect wind direction.</li>
-            <li><strong>Distance from the Sea:</strong> Coastal areas have moderate climate.</li>
-            <li><strong>Relief Features:</strong> Mountains influence rainfall distribution.</li>
+            <li>Large size of the country</li>
+            <li>Relief features like Himalayas</li>
+            <li>Distance from the sea</li>
+            <li>Seasonal monsoon winds</li>
         </ul>
     </div>
-
-    <div class="grid">
-        <div class="card">
-            <h2>Cold Weather Season</h2>
-            <p>
-                The cold weather season begins from December to February. The temperature decreases
-                from south to north. Light winter rainfall occurs due to western disturbances.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Hot Weather Season</h2>
-            <p>
-                From March to May, temperatures rise rapidly. Hot dry winds called <strong>Loo</strong>
-                blow in northern plains. Dust storms are common.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Advancing Monsoon</h2>
-            <p>
-                The south-west monsoon arrives in early June. It brings heavy rainfall and is vital
-                for agriculture. India receives about 75% of its rainfall during this season.
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>Retreating Monsoon</h2>
-            <p>
-                From October to November, monsoon winds withdraw. Cyclones may develop over the
-                Bay of Bengal causing heavy rain in coastal areas.
-            </p>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>Importance of Monsoon</h2>
-        <ul>
-            <li>Essential for agriculture</li>
-            <li>Refills rivers and reservoirs</li>
-            <li>Controls vegetation and cropping patterns</li>
-            <li>Affects economy and daily life</li>
-        </ul>
-    </div>
-
 </section>
 
 <footer>
-    © 2025 | Indian Climate Project – Class 8  
-    <br>Designed By Pranav Manglani
+    © 2025 | Climate of India – Class 8  
+    <br>Interactive Map • NCERT Based • Viva Ready 💯
 </footer>
+
+<script>
+function show(region){
+    const info=document.getElementById("info");
+    const data={
+        north:["Northern India","Extreme climate. Very cold winters and hot summers. Himalayas block cold winds."],
+        west:["Western India","Hot and dry climate. Rajasthan receives very little rainfall."],
+        central:["Central India","Moderate rainfall. Hot summers and mild winters."],
+        east:["Eastern India","Heavy rainfall due to Bay of Bengal monsoon winds."],
+        south:["Southern India","Equable climate. Less temperature variation, rainfall from both monsoons."]
+    };
+    info.innerHTML=`<h3>${data[region][0]}</h3><p>${data[region][1]}</p>`;
+}
+</script>
 
 </body>
 </html>
